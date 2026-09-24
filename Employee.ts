@@ -14,4 +14,22 @@ export abstract class Employee {
         this.rank = rank;
         this.age = age;
     }
+
+    public validateAge() {
+        if (this.age <= 16)
+            return false;
+        else
+            return true;
+    }
+
+    public validateRank() {
+        if (this.rank < 0 || this.rank > 5)
+            return true;
+        else
+            return false;
+    }
+
+    public validateSSN() {
+        return true;
+    }
 }
