@@ -1,4 +1,4 @@
-import { IEmployee } from "./ContractEmployee.js";
+import { IEmployee } from "./IEmployee.js";
 import { Employee } from "./Employee.js";
 
 export class FulltimeEmployee extends Employee implements IEmployee {
