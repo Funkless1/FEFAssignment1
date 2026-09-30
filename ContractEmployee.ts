@@ -30,6 +30,11 @@ export class ContractEmployee extends Employee implements IEmployee {
     }
 
     saveEmployee(): void {
-        
+        if (!this.validateAge())
+            throw new Error("Employee must be atleast 16.");
+        if (!this.validateRank())
+            throw new Error("Employee rank must be between 1-5");
+        if (!this.validateSSN())
+            throw new Error("SSN must follow patterns: ###-###-###");
     }
 }

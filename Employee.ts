@@ -13,33 +13,19 @@ export abstract class Employee {
         this.address = address;
         this.rank = rank;
         this.age = age;
-
-        this.validateAge();
-        this.validateRank();
-        this.validateSSN();
-        
     }
 
     public validateAge(): boolean {
-        if (this.age >= 16)
-            return true;
-        else
-            throw new Error("Employee must be atleast 16.");
+        return (this.age >= 16);
     }
 
     public validateRank(): boolean {
-        if (this.rank > 0 || this.rank < 6)
-            return true;
-        else
-            throw new Error("Employee rank must be between 1-5");
+        return (this.rank > 0 || this.rank < 6);
     }
 
     public validateSSN(): boolean {
         const pattern = /^\d{3}-\d{3}-\d{3}$/; //this line looked up
 
-        if (pattern.test(this.ssn))
-            return true;
-        else
-            throw new Error("SSN must follow patterns: ###-###-###")
+        return (pattern.test(this.ssn));
     }
 }
