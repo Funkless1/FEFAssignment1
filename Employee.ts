@@ -16,18 +16,30 @@ export abstract class Employee {
 
         this.validateAge();
         this.validateRank();
+        this.validateSSN();
         
     }
 
     public validateAge(): boolean {
-        return this.age >= 16;
+        if (this.age >= 16)
+            return true;
+        else
+            throw new Error("Employee must be atleast 16.");
     }
 
     public validateRank(): boolean {
-        return this.rank > 0 || this.rank < 6;
+        if (this.rank > 0 || this.rank < 6)
+            return true;
+        else
+            throw new Error("Employee rank must be between 1-5");
     }
 
     public validateSSN(): boolean {
-        return true;
+        const pattern = /^\d{3}-\d{3}-\d{3}$/; //this line looked up
+
+        if (pattern.test(this.ssn))
+            return true;
+        else
+            throw new Error("SSN must follow patterns: ###-###-###")
     }
 }
