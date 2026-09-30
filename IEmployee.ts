@@ -1,5 +1,5 @@
 export interface IEmployee {
     displayInformation(): string;
-    calculateCompensation(): number; //deleted parameter
+    calculateCompensation(): number;
     saveEmployee(): void;
 }
