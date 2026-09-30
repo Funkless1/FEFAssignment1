@@ -19,7 +19,25 @@ export class FulltimeEmployee extends Employee implements IEmployee {
         return `Employee: ${this.firstName} ${this.lastName} Age: ${this.age} Rank: ${this.rank} Address: ${this.address} SSN: ${this.ssn}`
     }
 
-    calculateCompensation(amount: number): void {
+    calculateCompensation(): number {
+        let overtimeComp: number;
+
+        if (this.overtimeHours >= 1 && this.overtimeHours <= 10) {
+            overtimeComp = (this.salary / 40) * this.overtimeHours * 1.25;
+        }
+        else if (this.overtimeHours >= 11 && this.overtimeHours <= 20) {
+            overtimeComp = (this.salary / 40) * this.overtimeHours * 1.5;
+        }
+        else if (this.overtimeHours >= 21 && this.overtimeHours <= 30) {
+            overtimeComp = (this.salary / 40) * this.overtimeHours * 1.75;
+        }
+        else if (this.overtimeHours >= 31 && this.overtimeHours <= 40) {
+            overtimeComp = (this.salary / 40) * this.overtimeHours * 2;
+        }
+        else
+            overtimeComp = 0;
+        
+        return this.salary + this.bonus + overtimeComp;
         
     }
 
