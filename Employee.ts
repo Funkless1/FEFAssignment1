@@ -20,7 +20,7 @@ export abstract class Employee {
     }
 
     public validateRank(): boolean {
-        return (this.rank > 0 || this.rank < 6);
+        return (this.rank > 0 && this.rank < 6);
     }
 
     public validateSSN(): boolean {

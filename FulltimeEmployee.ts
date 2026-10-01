@@ -16,7 +16,7 @@ export class FulltimeEmployee extends Employee implements IEmployee {
     }
 
     displayInformation(): string {
-        return `Employee: ${this.firstName} ${this.lastName} Age: ${this.age} Rank: ${this.rank} Address: ${this.address} SSN: ${this.ssn}`
+        return `Employee: ${this.firstName} ${this.lastName} | Age: ${this.age} | Rank: ${this.rank} | Address: ${this.address} | SSN: ${this.ssn}`
     }
 
     calculateCompensation(): number {
